@@ -1,0 +1,38 @@
+html {
+  body {
+    .contain-all {
+      .main-content {
+        .home-head {
+          .left-and-right {
+            .about-content {
+              padding-left: 0px;
+              width: 70%;
+              @media @phone {
+                width: 100%;
+              }
+            }
+          }
+        } //end of home head
+      } // end of main-content
+      .photos {
+        max-width: 1200px;
+        width: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        
+        @media @phone {
+          flex-wrap: wrap;
+        }
+
+        img {
+          width: 49%;
+          object-fit: none;
+          @media @phone {
+            width: 100%;
+          }
+        }
+      }//end of photos
+    }//end of contain-all
+  } // end of body
+} // end of html

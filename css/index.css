@@ -1,34 +1,405 @@
-header {
-  font-family: Helvetica, Arial, sans-serif;
-  color: green;
-  font-size: 40px;
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+html {
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+  color: #2e3c40;
+}
+html h1 {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 80px;
+  text-transform: uppercase;
+}
+html p {
+  font-size: 18px;
+  line-height: 38px;
+}
+html .small-caps {
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 21px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.contain-all {
+  padding: 0 40px;
+}
+.contain-all header {
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  padding: 60px 24px;
+}
+.contain-all header .nav-container {
+  width: 100%;
+  max-width: 1170px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+.contain-all header .nav-container nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 940px) {
+  .contain-all header .nav-container nav {
+    display: none;
+  }
+}
+.contain-all header .nav-container nav a {
+  color: #2e3c40;
+  text-decoration: none;
+  margin-left: 50px;
+}
+.contain-all .main-content {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.contain-all .main-content h1 {
+  margin-bottom: 50px;
+}
+.contain-all .main-content .home-head {
+  padding: 115px 0px;
+}
+.contain-all .main-content .left-and-right {
+  display: flex;
+  width: 100%;
+}
+@media (max-width: 940px) {
+  .contain-all .main-content .left-and-right {
+    flex-wrap: wrap;
+  }
+}
+.contain-all .main-content .left-and-right .content-left {
+  max-width: 400px;
+  width: 30%;
+}
+@media (max-width: 940px) {
+  .contain-all .main-content .left-and-right .content-left {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+}
+.contain-all .main-content .left-and-right .content-right {
+  padding-left: 100px;
+  width: 70%;
+}
+@media (max-width: 940px) {
+  .contain-all .main-content .left-and-right .content-right {
+    width: 100%;
+    padding-left: 0px;
+  }
+}
+.contain-all .main-content .left-and-right li {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  line-height: 53px;
+  display: inline;
+  white-space: nowrap;
+}
+.contain-all .main-content .left-and-right li a {
+  color: red;
+}
+.contain-all .projects-grid {
+  display: flex;
+  height: 800px;
+  width: 100%;
+}
+@media (max-width: 940px) {
+  .contain-all .projects-grid {
+    flex-wrap: wrap;
+  }
+}
+.contain-all .projects-grid .projects {
+  width: 100%;
+}
+.contain-all .projects-grid .projects-right {
+  background-color: red;
+  background-image: url(../images/bike-2.jpg);
+  background-size: cover;
+}
+.contain-all .projects-grid .projects-left {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+}
+.contain-all .projects-grid .projects-left .projects-left-top {
+  background-color: green;
+  background-image: url(../images/bike-1.jpg);
+  background-size: cover;
+  height: 100%;
+}
+.contain-all .projects-grid .projects-left .projects-left-bottom {
+  height: 100%;
+  display: flex;
+}
+@media (max-width: 700px) {
+  .contain-all .projects-grid .projects-left .projects-left-bottom {
+    flex-direction: column;
+  }
+}
+.contain-all .projects-grid .projects-left .projects-left-bottom .projects-left-bottom-left {
+  background-color: blue;
+  background-image: url(../images/bike-3.jpg);
+  background-size: cover;
+  height: 100%;
+}
+@media (max-width: 700px) {
+  .contain-all .projects-grid .projects-left .projects-left-bottom .projects-left-bottom-left {
+    height: 200%;
+  }
+}
+.contain-all .projects-grid .projects-left .projects-left-bottom .projects-left-bottom-right {
+  background-color: purple;
+  background-image: url(../images/bike-4.jpg);
+  background-size: cover;
+  height: 100%;
+}
+@media (max-width: 700px) {
+  .contain-all .projects-grid .projects-left .projects-left-bottom .projects-left-bottom-right {
+    height: 200%;
+  }
+}
+.contain-all .secondary h1 {
+  color: #ff5c5c;
+  font-size: 50px;
+}
+.contain-all .secondary .left-and-right {
+  display: flex;
+  width: 100%;
+}
+@media (max-width: 940px) {
+  .contain-all .secondary .left-and-right {
+    flex-wrap: wrap;
+  }
+}
+.contain-all .secondary .left-and-right .content-left {
+  max-width: 900px;
+  width: 70%;
+}
+@media (max-width: 940px) {
+  .contain-all .secondary .left-and-right .content-left {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+}
+.contain-all .secondary .left-and-right li {
+  display: block;
+  white-space: wrap;
+}
+.contain-all .tertiary h1 {
+  color: #ff5c5c;
+  font-size: 50px;
+}
+.contain-all .tertiary .left-and-right .content-left {
+  max-width: 200px;
+}
+.contain-all .tertiary .left-and-right li {
+  display: block;
+  white-space: wrap;
+}
+.contain-all .logos {
+  max-width: 1170px;
+  margin: auto;
+}
+.contain-all .logos .logos-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.contain-all .logos .logos-container img {
+  flex-basis: 15%;
+  width: 150px;
+  margin: 40px;
+}
+.footer {
+  margin-top: 60px;
+  height: 700px;
+  background-color: #ff5c5c;
+  margin: none;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  justify-content: space-between;
+}
+.footer .main-footer-content {
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.footer .main-footer-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  text-decoration: underline;
+  font-size: 50px;
+}
+.footer .bottom-footer-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+}
+.footer .bottom-footer-content a {
+  color: white;
+  margin-left: 20px;
+}
+html body .contain-all .main-content .home-head .left-and-right .about-content {
+  padding-left: 0px;
+  width: 70%;
+}
+@media (max-width: 700px) {
+  html body .contain-all .main-content .home-head .left-and-right .about-content {
+    width: 100%;
+  }
+}
+html body .contain-all .photos {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
   display: flex;
   justify-content: space-between;
 }
-header h1 {
-  margin: 0;
+@media (max-width: 700px) {
+  html body .contain-all .photos {
+    flex-wrap: wrap;
+  }
 }
-header nav a {
-  font-size: 40px;
+html body .contain-all .photos img {
+  width: 49%;
+  object-fit: none;
 }
-.container ul {
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
-}
-.container ul li {
-  font-size: 40px;
-  margin: 10px;
-}
-.btn {
-  width: 120px;
-  height: 50px;
-  background-color: lightblue;
-  font-size: 20px;
-}
-.btn-2 {
-  width: 300px;
-  height: 50px;
-  background-color: pink;
-  font-size: 20px;
+@media (max-width: 700px) {
+  html body .contain-all .photos img {
+    width: 100%;
+  }
 }
